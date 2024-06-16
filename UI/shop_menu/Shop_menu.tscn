@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dhg8ia4tkq7e"]
+
+[node name="Shop_ menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 123.0
+offset_right = 810.0
+offset_bottom = 183.0
+theme_override_font_sizes/font_size = 40
+text = "Upgrades shop"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.0
+offset_top = -219.0
+offset_right = 233.0
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 66.0
+offset_right = 398.0
+offset_bottom = 324.0
+theme_override_constants/separation = -80
+alignment = 1
+
+[node name="Regeneration Amount" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+text = "Regeneration Amount"
+
+[node name="Regeneration Speed" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Regeneration Speed"
+
+[node name="Max Health" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Max Health"
+
+[node name="Damage" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Damage"

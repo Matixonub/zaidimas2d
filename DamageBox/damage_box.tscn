@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdvxebyys67k3"]
+
+[sub_resource type="GDScript" id="GDScript_fxc0u"]
+script/source = "extends Node2D
+
+func _ready():
+	$HitBox/CollisionShape2D.disabled=true
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yhw0b"]
+radius = 21.0238
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j5fvn"]
+radius = 19.0
+
+[node name="DamageBox" type="Node2D"]
+script = SubResource("GDScript_fxc0u")
+
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_yhw0b")
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(24, 0)
+shape = SubResource("CircleShape2D_j5fvn")

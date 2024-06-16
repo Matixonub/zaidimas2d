@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0o466svxegyx"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_hkmj6"]
+[ext_resource type="PackedScene" uid="uid://bianh5l1yn8fx" path="res://background.tscn" id="2_upg6q"]
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_hkmj6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 325.0
+offset_top = 153.0
+offset_right = 770.0
+offset_bottom = 488.0
+
+[node name="Play_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "PLAY"
+
+[node name="load_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Load Last Save"
+
+[node name="quit_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[node name="History" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "History"
+
+[node name="Background" parent="." instance=ExtResource("2_upg6q")]
+
+[connection signal="pressed" from="VBoxContainer/Play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/load_button" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/History" to="." method="_on_quit_button_pressed"]

@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=3 uid="uid://c43yqd3aiie82"]
+
+[sub_resource type="GDScript" id="GDScript_qqxw2"]
+script/source = "extends CanvasLayer
+
+@onready var gold_text = $Gold
+@onready var kills_text = $Kills
+
+func _ready():
+	pass # Replace with function body.
+
+
+func _process(_delta):
+	gold_text.text = str(Global.player_gold)
+	kills_text.text = str(Global.player_kills)
+"
+
+[sub_resource type="GDScript" id="GDScript_h5lao"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	text = \"Health \" + str(Global.player_health)
+"
+
+[sub_resource type="GDScript" id="GDScript_qrrtl"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	text = \"Gold \" + str(Global.player_gold)
+"
+
+[sub_resource type="GDScript" id="GDScript_m6xmy"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	text = \"KILLS \" + str(Global.player_kills)
+"
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = SubResource("GDScript_qqxw2")
+
+[node name="Health" type="Label" parent="."]
+offset_left = 33.0
+offset_top = 33.0
+offset_right = 119.0
+offset_bottom = 108.0
+theme_override_font_sizes/font_size = 30
+text = "HP"
+script = SubResource("GDScript_h5lao")
+
+[node name="Gold" type="Label" parent="."]
+offset_left = 31.0
+offset_top = 72.0
+offset_right = 176.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 30
+text = "GOLD"
+script = SubResource("GDScript_qrrtl")
+
+[node name="Days" type="Label" parent="."]
+offset_left = 18.0
+offset_top = 42.0
+offset_right = 1145.0
+offset_bottom = 129.0
+theme_override_font_sizes/font_size = 30
+text = "Day"
+horizontal_alignment = 1
+
+[node name="Kills" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 116.0
+offset_right = 136.0
+offset_bottom = 181.0
+theme_override_font_sizes/font_size = 30
+text = "KILLS"
+script = SubResource("GDScript_m6xmy")

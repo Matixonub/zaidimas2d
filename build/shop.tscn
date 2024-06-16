@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://01kqnwxfc6mw"]
+
+[ext_resource type="Texture2D" uid="uid://cl6xbe11mtafy" path="res://Jungle Asset Pack/market.png" id="1_k1nnv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ispm6"]
+size = Vector2(136, 163)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gcgo3"]
+radius = 95.352
+
+[node name="Shop" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_ispm6")
+
+[node name="Shop" type="Area2D" parent="."]
+
+[node name="Market" type="Sprite2D" parent="Shop"]
+position = Vector2(-2, -18)
+scale = Vector2(0.457031, 0.457031)
+texture = ExtResource("1_k1nnv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop"]
+shape = SubResource("CircleShape2D_gcgo3")
